@@ -42,6 +42,10 @@ function pauseDownload(downloadId){
     //pausing.then(directDownDrive,onError);
 }
 
+function cancelDownloads(downloadId) {
+    let canceling = chrome.downloads.cancel(downloadId,directDownDrive)
+}
+
 
 function handleDownload(down){
     console.log("handle download started");
@@ -52,7 +56,8 @@ function handleDownload(down){
     //console.log("hello world");
     downloadUrl = down.finalUrl;
     console.log(downloadUrl);
-    pauseDownload(downloadId);
+    cancelDownloads(downloadId);
+        //pauseDownload(downloadId);
     //directDownDrive(downloadUrl);
     //console.log(down.id);
 }
