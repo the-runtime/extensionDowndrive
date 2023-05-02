@@ -50,7 +50,7 @@ function handleDownload(down){
     //downloadId = 12345;
     console.log("Downloadid   "+ downloadId);
     //console.log("hello world");
-    downloadUrl = down.url;
+    downloadUrl = down.finalUrl;
     console.log(downloadUrl);
     pauseDownload(downloadId);
     //directDownDrive(downloadUrl);
