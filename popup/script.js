@@ -31,10 +31,6 @@ button.addEventListener('click', async function() {
     popState = true
     button.textContent = "Turn Off"
 
-      
-        
-        
-
     }
 
   }

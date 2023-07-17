@@ -9,7 +9,8 @@
       "48": "icons/downdrive.png"
     },
     "background": {
-      "service_worker": "startup.js"
+      "service_worker" : "background.js"
+
     },
 
     

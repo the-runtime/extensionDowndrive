@@ -1,11 +1,10 @@
 function handleDownload(down){
-    let downloadId;
-    let downloadUrl;
+    let downloadId = down.id;
+    let downloadUrl = down.finalUrl;
+   
     function directDownDrive(){
         console.log("download redirected");
         let downUrl = "https://downdrive.onrender.com/api/process/?url="+downloadUrl;
-
-        console.log(downUrl);
         chrome.tabs.create({url:downUrl});
 
     }
@@ -13,19 +12,10 @@ function handleDownload(down){
         let canceling = chrome.downloads.cancel(downloadId,directDownDrive)
     }
 
-    // console.log("handle download started");
-    downloadId = down.id;
-    // console.log("Downloadid   "+ downloadId);
-    downloadUrl = down.finalUrl;
-    // console.log(downloadUrl);
     cancelDownloads(downloadId);
-
 }
 
-let extState = false
-chrome.runtime.onMessage.addListener(messageReceived2);
-
-async function messageReceived2(msg, sender, sendResponse ) {
+async function messageReceived(msg, sender, sendResponse ) {
     // console.log("message to back is" + msg.type)
     if (msg.type === "click") {
         if (msg.val) {
@@ -46,4 +36,14 @@ async function messageReceived2(msg, sender, sendResponse ) {
     }
 }
 
+
+let extState = false
+chrome.runtime.onMessage.addListener(messageReceived);
+
+
+function run() {
+    setTimeout(arguments.callee, 5000);
+    console.log("running the callee")
+}
+run()
 
