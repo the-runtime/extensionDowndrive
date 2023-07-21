@@ -3,17 +3,15 @@
     "description": "download file directly to gdrive",
     "manifest_version": 3,
     "name": "downdrive",
-    "version": "0.1",
+    "version": "0.2",
     "homepage_url": "https://downdrive.onrender.com",
     "icons": {
       "48": "icons/downdrive.png"
     },
+
     "background": {
       "service_worker" : "background.js"
-
     },
-
-    
 
     "permissions": [
       "downloads",
